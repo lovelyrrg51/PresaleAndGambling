@@ -10,7 +10,7 @@ The presale contract, could be purchase the specialized tokens using USDT or ETH
 
 ### 1.1 Update Base Token Address
   Update base token address for presale. Only owner call it.
-  ```
+  ```solidity
   function updateBaseTokenAddress(address baseTokenAddress) external onlyOwner
   ```
 
