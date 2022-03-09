@@ -1,7 +1,7 @@
 Presale And Gambling Contract
 =============================
 
-This readme is about Presale and Gambling contracts, the introduction, how to use(deploy & test) it.
+This readme is about Presale and Gambling contracts, the introduction, how to use(deploy & test & verify) it.
 
 # 1. Introduction
 In this section, explain about methods in Presale and Gambling Contracts
@@ -80,4 +80,73 @@ The presale contract, could be purchase the specialized token using USDT or ETH.
   function purchaseTokenWithETH(uint256 baseAmount) external isContract isSale(baseAmount) 
   ```
 
+### 1.13 Withdraw ETH
+  Withdraw ETH From Presale Contract, Only owner call it.
+  ```solidity
+  function withdrawETH() external onlyOwner
+  ```
+
+### 1.14 Withdraw USDT
+  Withdraw USDT(ERC20) From Presale Contract, Only owner call it. erc20Token: Withdrawed Token Address, Here: USDT Address
+  ```solidity
+  function withdrawERC20(address erc20Token) external onlyOwner
+  ```
+
 ## 2) Gambling Contract
+The gambling contract, could be guess or not random number with users.
+
+### 2.1 Update USDT Address
+  Update USDT address on Gambling Contract. Only owner call it.
+  ```solidity
+  function updateUSDTTokenAddress(address usdtTokenAddress) external onlyOwner
+  ```
+
+### 2.2 Update Gambling Open Flag
+  Update Gambling Status on Gambling Contract. Only owner call it.
+  ```solidity
+  function updateGamblingFlag(bool gamblingFlag) external onlyOwner
+  ```
+
+### 2.3 Update Game Amount
+  Update Game Amount on Gambling Contract. Only owner call it. e.x: 100 (USDT or ETH) = 100 * 10 ^ 18
+  ```solidity
+  function updateGameAmount(uint256 gAmount) external onlyOwner
+  ```
+
+### 2.4 Update Gambling Method
+  Update Gambling Payment Method on Gambling Contract. Only owner call it. e.x: 1: USDT, 2: ETH
+  ```solidity
+  function updateGamblingMethod(uint16 gMethod) external onlyOwner
+  ```
+
+### 2.5 Update Random Max Number
+  Update Max Number for Random Guess on Gambling Contract. Only owner call it.
+  ```solidity
+  function updateRandomMaxNumber(uint256 maxNum) external onlyOwner {
+  ```
+
+### 2.6 Game With USDT
+  Gambling Function With USDT, should approve game amount of USDT to Gambling Contract.
+  And userNumber should be between 0 ~ randomMaxNumber - 1
+  ```solidity
+  function gamblingWithUSDT(uint256 userNumber) external isContract isGambling
+  ```
+
+### 2.7 Game With ETH
+  Gambling Function With ETH, should approve game amount of ETH to Gambling Contract.
+  And userNumber should be between 0 ~ randomMaxNumber - 1
+  ```solidity
+  function gamblingWithETH(uint256 userNumber) external payable isContract isGambling
+  ```
+
+### 2.8 Withdraw ETH
+  Withdraw ETH From Gambling Contract, Only owner call it.
+  ```solidity
+  function withdrawETH() external onlyOwner
+  ```
+
+### 2.9 Withdraw USDT
+  Withdraw USDT(ERC20) From Gambling Contract, Only owner call it. erc20Token: Withdrawed Token Address, Here: USDT Address
+  ```solidity
+  function withdrawERC20(address erc20Token) external onlyOwner
+  ```
