@@ -21,19 +21,19 @@ The presale contract, could be purchase the specialized tokens using USDT or ETH
   ```
 
 ### 1.3 Update USDT Sale Price
-  Update USDT Price for Presale. Only owner call it.
+  Update USDT Price for Presale. Only owner call it. It should be multiplied by 10 ^ 18. e.x: 0.01 USDT = 10 ** 16
   ```solidity
   function updateUSDTSalePrice(uint256 usdtPrice) external onlyOwner
   ```
 
 ### 1.4 Update ETH Sale Price
-  Update ETH Price for Presale. Only owner call it.
+  Update ETH Price for Presale. Only owner call it. It should be multiplied by 10 ^ 18. e.x: 0.002 ETH = 2 * 10 ** 15
   ```solidity
   function updateETHSalePrice(uint256 ethPrice) external onlyOwner
   ```
 
 ### 1.5 Update Sale Flag
-  Update Sale Status for Presale. Only owner call it.
+  Update Sale Status for Presale. Only owner call it. e.x: 0: Not Open, 1: Open
   ```solidity
   function updateIsSaleFlag(bool saleStatus) external onlyOwner
   ```
