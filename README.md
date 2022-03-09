@@ -174,13 +174,9 @@ How to Use(Install & Test & Deploy & Verify) the contract
 
 ## 4) Deploy
   ### Ropsten Deploy
-    ```sh
-    yarn deploy --network ropsten
-    ```
+    yarn deploy --network ropsten    
   ### Mainnet Deploy
-    ```sh
     yarn deploy --network mainnet
-    ```
 
 ## 5) Verify
   ```sh
