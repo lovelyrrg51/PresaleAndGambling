@@ -8,11 +8,10 @@ In this section, explain about methods in Presale and Gambling Contracts
 ## 1) Presale Contract
 The presale contract, could be purchase the specialized tokens using USDT or ETH.
 
-<dl>
-  <dt>Update Base Token Address</dt>
-  <dd>Update base token address for presale. Only owner call it.</dd>
-  ```sh
+### 1.1 Update Base Token Address
+  Update base token address for presale. Only owner call it.
+  ```
   function updateBaseTokenAddress(address baseTokenAddress) external onlyOwner
   ```
-</dl>
+
 ## 2) Gambling Contract
