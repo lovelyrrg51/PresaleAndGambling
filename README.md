@@ -150,3 +150,40 @@ The gambling contract, could be guess or not random number with users.
   ```solidity
   function withdrawERC20(address erc20Token) external onlyOwner
   ```
+
+# 2. How to use
+How to Use(Install & Test & Deploy & Verify) the contract
+
+## 1) Environment
+  ```sh
+  DEPLOYING_METHOD=ROPSTEN // ROPSTEN or MAINNET
+  ETHERSCAN_API_KEY=ABC123ABC123ABC123ABC123ABC123ABC1
+  ROPSTEN_URL=https://eth-ropsten.alchemyapi.io/v2/<YOUR ALCHEMY KEY>
+  PRIVATE_KEY=0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1
+  ```
+
+## 2) Install
+  ```sh
+  yarn
+  ```
+
+## 3) Test
+  ```sh
+  yarn test
+  ```
+
+## 4) Deploy
+  ### Ropsten Deploy
+    ```sh
+    yarn deploy --network ropsten
+    ```
+  ### Mainnet Deploy
+    ```sh
+    yarn deploy --network mainnet
+    ```
+
+## 5) Verify
+  ```sh
+  npx hardhat verify --network ${network} ${Presale Contract Address}
+  npx hardhat verify --network ${network} ${Gambling Contract Address}
+  ```
